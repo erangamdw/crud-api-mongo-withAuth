@@ -99,7 +99,7 @@ const forgotPassword = async (req, res) => {
 
     // Save the reset token and its expiration date in the user document
     user.resetPasswordToken = resetToken;
-    user.resetPasswordExpires = Date.now() + 3600000; // Token will expire in 1 hour
+    user.resetPasswordExpires = Date.now() + 600000; // Token will expire in 10 minutes
 
     await user.save();
 
