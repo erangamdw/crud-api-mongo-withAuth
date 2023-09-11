@@ -72,10 +72,22 @@ const getAllStudents = async (req, res) => {
   }
 };
 
+const uploadStudentImage = async (req, res) => {
+  try {
+    // const { name, address, age, gender } = req.body;
+    // const student = new StudentModel({ name, address, age, gender });
+    // const savedStudent = await student.save();
+    res.status(201).json("uploaded");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   addStudent,
   updateStudent,
   deleteStudent,
   getStudent,
   getAllStudents,
+  uploadStudentImage,
 };
